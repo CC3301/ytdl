@@ -1,0 +1,23 @@
+<div id="page">
+    <div id="content">
+        <h1>Download Youtube Video</h1>
+        <hr>
+    </div>
+    <% status %>
+    <div class="card bg-dark">
+      <article class="card-body bg-dark">
+        <h4 class="card-title text-center mb-4 mt-1 text-secondary">Paste the link to the video</h4>
+        <hr>
+        <form method="post" action="<% request.uri_base %>/download_video">
+          <div class="form-group">
+            <div class="input-group bg-dark">
+              <input name="youtube_link" class="form-control bg-dark text-secondary" style="border: none;" placeholder="https://youtube.com/watch?v=someid" type="text" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-secondary btn-lock">Download</button>
+          </div>
+        </form>
+      </article>
+    </div>
+</div>

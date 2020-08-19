@@ -1,0 +1,7 @@
+<div id="page">
+    <div id="content">
+        <img class="cover" src="<% request.uri_base %>/<% thumb %>" alt="<% thumb %>">
+        <audio src="<% request.uri_base %>/music/<% file %>" controls>
+        </audio>
+    </div>
+</div>

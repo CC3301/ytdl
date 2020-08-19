@@ -1,0 +1,28 @@
+<div id="page">
+    <div id="content">
+        <h1>Downloaded Youtube Videos</h1>
+        <p class="text-secondary"><% status %></p>
+        <hr>
+        <a href="<% request.uri_base %>/add_download" role="button" class="btn btn-secondary">Add</a>
+        <table style="margin-top: 10px;" class="table table-hover table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">File</th>
+                    <th scope="col">Playback</th>
+                    <th scope="col">Length</th>
+                    <th scope="col">Thumbnail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% FOREACH file in files %>
+                <tr>
+                    <td><a href="<% request.uri_base %>/send_file?file=<% file.value.file %>"><% file.value.title %></td>
+                    <td><a role="button" class="btn btn-secondary" href="<% request.uri_base %>/play_file?file=<% file.value.file %>">Listen</td>
+                    <td><% file.value.length %></td>
+                    <td><img class="rounded" style="max-width: 150px; max-height: 75px" src="<% request.uri_base %><% file.value.thumb %>"></td>
+                </tr>
+                <% END %>
+            </tbody>
+        <table>
+    </div>
+</div>
